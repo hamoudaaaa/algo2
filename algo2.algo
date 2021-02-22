@@ -50,3 +50,31 @@ BEGIN
       END_FOR
     return ("sum");
 END
+Write ("fill the first tab")
+    Read (tab1)
+    Write ("fill the second tab")
+    Read (tab2)
+    sum1 := 0
+    sum2 := 0
+    sum := 0
+    i := 0
+    j := 0
+    WHILE (j < tab2.length) DO
+        WHILE (i < tab1.length) DO
+        IF (tab1[i] <> tab2[j] ) then
+        sum2 := sum2 + tab2[j]
+        i := i+1
+        ELSE
+        j := j+1
+        END_IF
+    END_WHILE
+WHILE (i < tab1.length) DO
+        WHILE (j < tab2.length) DO
+        IF (tab1[i] <> tab2[j] ) then
+        sum1 := sum1 + tab1[i]
+        j := j+1
+        ELSE
+        i := i+1
+        END_IF
+    END_WHILE
+sum := sum1 + sum2
