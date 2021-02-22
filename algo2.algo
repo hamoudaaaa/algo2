@@ -1,0 +1,52 @@
+ALGORITHM Distinct_element
+VAR
+Htab : HASH_TABLE<integer,integer>;
+str1,str2 = integer;
+i,j,elem,cont =integer;
+BEGIN
+read(str1);
+    FOR i FROM 0 TO str1.length-1 STEP 1  DO
+        elem:= str1[i];
+        IF (htab.lookup(elem) = TRUE) THEN
+        cont:= Htab.get (elem);;
+    htab.insert(elem,count+1);
+    ELSE
+    htab.insert(elem,1);
+    END_IF
+
+    END_FOR
+    read(str2);
+    FOR i FROM 0 TO str2.length-1 STEP 1  DO
+        elem:= str2[i];
+        IF (htab.lookup(elem) = TRUE) THEN
+        cont:= Htab.get (elem);;
+    htab.insert(elem,count+1);
+    ELSE
+    htab.insert(elem,1);
+    END_IF
+
+    END_FOR
+
+
+END
+FUNCTION som of distinct (str1,str2) : integer
+VAR
+sum:integer;
+i,j: integer;
+
+  
+BEGIN
+      sum:=0;
+      FOR i FROM 0 TO str1.length-1 STEP 1  DO
+        FOR j FROM 0 TO str2.length-1 STEP 1  DO
+            IF (i=j) THEN
+                sum+= str1[i]
+            END_IF
+            IF (str1[i]=str2[j]) THEN
+                break;
+            END_IF
+            else break
+        END_FOR
+      END_FOR
+    return ("sum");
+END
